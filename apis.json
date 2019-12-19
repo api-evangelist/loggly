@@ -1,0 +1,95 @@
+{
+    "name": "Loggly",
+    "description": "Log Analysis \/ Log Management by Loggly: the world's most popular log analysis & monitoring in the cloud. Free trial. See why ??? of the Fortune 500 use us!",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/611-loggly,-inc-.jpg",
+    "tags": [
+        "api provider",
+        "api service provider",
+        "have api",
+        "logging",
+        "target"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/loggly\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Loggly",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/611-loggly,-inc-.jpg",
+            "humanURL": "http:\/\/loggly.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/loggly-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/loggly-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": "http:\/\/logs-01.loggly.com\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/www.loggly.com\/blog\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "https:\/\/www.loggly.com\/feed\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/loggly"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/loggly"
+        },
+        {
+            "type": "Developers",
+            "url": "http:\/\/wiki.loggly.com\/apidocumentation"
+        },
+        {
+            "type": "Email",
+            "url": "info@loggly.com"
+        },
+        {
+            "type": "Email",
+            "url": "sales@loggly.com"
+        },
+        {
+            "type": "Email",
+            "url": "press@loggly.com"
+        },
+        {
+            "type": "Email",
+            "url": "support@loggly.com"
+        },
+        {
+            "type": "Email",
+            "url": "copyright@loggly.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/loggly"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/loggly"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/loggly.com"
+        }
+    ]
+}
