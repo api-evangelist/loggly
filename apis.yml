@@ -1,8 +1,28 @@
 aid: loggly
 name: Loggly
-description: 'Loggly is a company surfaced as a portfolio company of trinity-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: developer-tools. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Loggly is a cloud-based log management and analytics service (part of SolarWinds)
+  that aggregates, searches, and visualizes application, server, and infrastructure
+  logs in real time. Developers ship logs over syslog or the HTTP/S event endpoint
+  and query them through a REST API supporting full-text search, field faceting,
+  statistics, and dashboards. Loggly offers token-based (bearer) API authentication,
+  an event-retrieval API (search, events, iterate, fields, stats) and a
+  customer-token ingestion API, with SOC 2 Type II, PCI, and HIPAA-aligned security.
+  Originally surfaced as a trinity-ventures portfolio lead, this profile has been
+  enriched with real, searched API artifacts.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/6423?v=4
 url: https://raw.githubusercontent.com/api-evangelist/loggly/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,13 +32,107 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Developer Tools
-apis: []
+- Logging
+- Log Management
+- Observability
+- Monitoring
+- DevOps
+- Analytics
+- SaaS
+apis:
+- name: Loggly Event Retrieval API
+  description: >-
+    REST API (apiv2) for searching and retrieving log events: initiate a search to
+    get an RSID, then page results via the events/iterate endpoints, enumerate
+    indexed fields with the fields/facet API, and compute metrics with the stats API.
+  humanURL: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-retrieving-data.htm
+  baseURL: https://[subdomain].loggly.com/apiv2
+  tags:
+  - Logging
+  - Search
+  - Observability
+  properties:
+  - type: Documentation
+    url: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-overview.htm
+  - type: Authentication
+    url: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/token-based-api-authentication.htm
+- name: Loggly HTTP/S Event Endpoint
+  description: >-
+    Bulk/single event ingestion API. POST or GET log events to Loggly using a
+    customer token; supports plain text and JSON payloads over HTTPS.
+  humanURL: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/http-endpoint.htm
+  baseURL: https://logs-01.loggly.com/inputs
+  tags:
+  - Logging
+  - Ingestion
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/loggly-domain-security.yml
+- type: DeveloperPortal
+  url: https://documentation.solarwinds.com/en/success_center/loggly/content/loggly-documentation.htm
+- type: Documentation
+  url: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-overview.htm
+- type: APIReference
+  url: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-retrieving-data.htm
+- type: GettingStarted
+  url: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/get-started.htm
+- type: Support
+  url: https://support.solarwinds.com/loggly
+- type: Blog
+  url: https://www.loggly.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/loggly
+- type: Pricing
+  url: https://www.loggly.com/plans-and-pricing/
+- type: SignUp
+  url: https://www.loggly.com/signup/
+- type: TermsOfService
+  url: https://www.solarwinds.com/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.solarwinds.com/legal/privacy
+- type: StatusPage
+  url: https://status.loggly.com/
+- type: TrustCenter
+  url: https://www.solarwinds.com/trust-center
+- type: Packages
+  url: packages/loggly-packages.yml
+- type: SDKs
+  url: packages/loggly-packages.yml
+- type: Authentication
+  url: authentication/loggly-authentication.yml
+- type: Conventions
+  url: conventions/loggly-conventions.yml
+- type: ErrorCatalog
+  url: errors/loggly-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/loggly-lifecycle.yml
+- type: Deprecation
+  url: https://www.solarwinds.com/eol
+- type: ChangeLog
+  url: changelog/loggly-changelog.yml
+- type: Conformance
+  url: conformance/loggly-conformance.yml
+- type: Compliance
+  url: https://www.solarwinds.com/trust-center
+- type: VulnerabilityDisclosure
+  url: security/loggly-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.solarwinds.com/information-security
+- type: MCPServer
+  url: mcp/loggly-mcp.yml
+- type: LLMsTxt
+  url: llms/loggly-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1
