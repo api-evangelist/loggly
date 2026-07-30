@@ -1,0 +1,41 @@
+# Loggly
+
+> Loggly is a cloud-based log management and analytics service (part of SolarWinds) for aggregating, searching, and visualizing application, server, and infrastructure logs in real time. Ship logs over syslog or the HTTP/S event endpoint and query them through the apiv2 REST API (search, events, iterate, fields, stats). Authentication is bearer API tokens for retrieval and customer tokens for ingestion.
+
+## APIs
+
+- [Loggly Event Retrieval API](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-retrieving-data.htm): apiv2 REST search/events/iterate/fields/stats. Base: https://[subdomain].loggly.com/apiv2
+- [Loggly HTTP/S Event Endpoint](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/http-endpoint.htm): event ingestion via customer token. Base: https://logs-01.loggly.com/inputs
+
+## Docs
+
+- [API Overview](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-overview.htm)
+- [Token-Based API Authentication](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/token-based-api-authentication.htm)
+- [Retrieving Data (Search + Events)](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-retrieving-data.htm)
+- [Paginating Event Retrieval API](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/paginating-event-retrieval-api.htm)
+- [Stats API](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/stats-api.htm)
+- [Getting Started](https://documentation.solarwinds.com/en/success_center/loggly/content/admin/get-started.htm)
+- [Release Notes](https://documentation.solarwinds.com/en/success_center/loggly/content/release_notes/loggly_1_release_notes.htm)
+- [Security & Compliance](https://documentation.solarwinds.com/en/success_center/loggly/content/shared/security.htm)
+
+## Artifacts
+
+- [Authentication profile](authentication/loggly-authentication.yml)
+- [API conventions](conventions/loggly-conventions.yml)
+- [Error codes](errors/loggly-error-codes.yml)
+- [Lifecycle](lifecycle/loggly-lifecycle.yml)
+- [Changelog](changelog/loggly-changelog.yml)
+- [Conformance](conformance/loggly-conformance.yml)
+- [Packages / SDKs](packages/loggly-packages.yml)
+- [MCP (candidate)](mcp/loggly-mcp.yml)
+
+## Developer
+
+- [Developer Documentation](https://documentation.solarwinds.com/en/success_center/loggly/content/loggly-documentation.htm)
+- [GitHub org](https://github.com/loggly)
+- [Pricing](https://www.loggly.com/plans-and-pricing/)
+- [Sign Up](https://www.loggly.com/signup/)
+- [Status](https://status.loggly.com/)
+- [Blog](https://www.loggly.com/blog/)
+- [Support](https://support.solarwinds.com/loggly)
+- [Trust Center](https://www.solarwinds.com/trust-center)

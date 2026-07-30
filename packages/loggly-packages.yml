@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  npm + PyPI + github.com/loggly org; Loggly SDK/library documentation
+packages:
+- language: javascript
+  registry: npm
+  name: winston-loggly-bulk
+  url: https://www.npmjs.com/package/winston-loggly-bulk
+  repo: https://github.com/loggly/winston-loggly-bulk
+  install: npm install winston-loggly-bulk
+  version: 3.3.3
+  official: true
+  notes: >-
+    Loggly transport for the winston logger, published under the Loggly GitHub
+    org; buffers events during temporary network outages. Loggly's recommended
+    Node.js setup.
+- language: javascript
+  registry: npm
+  name: loggly
+  url: https://www.npmjs.com/package/loggly
+  repo: https://github.com/winstonjs/node-loggly
+  install: npm install loggly
+  version: 1.1.1
+  official: false
+  notes: >-
+    node-loggly client for the Loggly API (winstonjs). Referenced by Loggly docs
+    but maintained under the winstonjs org, not the Loggly org.
+- language: javascript
+  registry: github
+  name: loggly-jslogger
+  url: https://github.com/loggly/loggly-jslogger
+  install: >-
+    load via CDN/script tag (loggly.tracker.js) — client-side browser logger
+  official: true
+  notes: Client-side (browser) logger for cross-site log POSTing to Loggly v2.
+- language: python
+  registry: pypi
+  name: loggly-python-handler
+  url: https://pypi.org/project/loggly-python-handler/
+  repo: https://github.com/loggly/loggly-python-handler
+  install: pip install loggly-python-handler
+  official: true
+  notes: Python logging handler that sends messages to Loggly over HTTPS.
+- language: python
+  registry: pypi
+  name: Hoover
+  url: https://pypi.org/project/hoover/
+  repo: https://github.com/loggly/hoover
+  install: pip install hoover
+  official: true
+  notes: >-
+    Older first-party Python library for logging to Loggly from within Python
+    web apps.
+- language: php
+  registry: github
+  name: loggly-php
+  url: https://github.com/loggly/loggly-php
+  install: composer / manual include
+  official: true
+  notes: First-party PHP SDK for sending events to Loggly.

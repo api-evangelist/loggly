@@ -1,0 +1,68 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-retrieving-data.htm
+  + paginating-event-retrieval-api + stats-api + api-overview docs
+conventions:
+  base_url: https://[subdomain].loggly.com/apiv2
+  authentication:
+    style: bearer-token
+    header: 'Authorization: bearer <api-token>'
+    ref: authentication/loggly-authentication.yml
+  content_types:
+    request: [text/plain, application/json]
+    response: [application/json, text/csv]
+  pagination:
+    styles:
+    - name: rsid-page
+      description: >-
+        Two-step flow. GET /search?q=&from=&until= returns an RSID (Remote
+        Search ID); GET /events?rsid=&page= then pages results (page is
+        zero-indexed).
+      params: [rsid, page, format, columns]
+      hard_limit: >-
+        Maximum 5000 events per search query; paging beyond 5000 is not
+        supported — issue a narrower query instead.
+    - name: iterate-cursor
+      description: >-
+        GET /events/iterate?q=&from=&until=&size= returns a page of 50-1000
+        events plus a `next` cursor URL to fetch subsequent pages beyond the
+        5000-event search cap.
+      params: [q, from, until, size, next]
+    facet:
+      endpoint: /fields and /fields/{fieldname}/
+      params: [facet_size]
+      limits: 'max 500 fields; max 300 field values per facet'
+  time_range:
+    params: [from, until]
+    defaults: {from: '-24h', until: 'now'}
+    formats: [relative (e.g. -2h, -10m), ISO 8601 absolute]
+  ordering:
+    param: order
+    values: [asc, desc]
+    default: desc
+  stats:
+    endpoint: /stats/{stat_type}/{field}
+    stat_types: [avg, sum, min, max, percentiles, value_count, cardinality, stats, all]
+  idempotency:
+    supported: false
+    note: >-
+      No idempotency-key mechanism is documented. Retrieval endpoints are GET
+      (naturally idempotent); ingestion is append-only with at-least-once
+      delivery, so no idempotency contract is published.
+  rate_limiting:
+    ingestion: 'No limit on the volume of events sent.'
+    retrieval: >-
+      Query endpoints are rate limited; exceeding the limit returns HTTP 503.
+      500/504 responses with a "timeout" description are retryable.
+    ref: errors/loggly-error-codes.yml
+  error_envelope:
+    format: json
+    note: >-
+      Errors are returned as standard HTTP status codes with a JSON body; not
+      RFC 9457 problem+json. See errors/loggly-error-codes.yml.
+    ref: errors/loggly-error-codes.yml
+  versioning:
+    scheme: uri-path
+    current: apiv2
+    ref: lifecycle/loggly-lifecycle.yml

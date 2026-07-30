@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/token-based-api-authentication.htm
+docs: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/token-based-api-authentication.htm
+summary:
+  types: [http, apiKey]
+  http_schemes: [bearer]
+  api_key_in: [query]
+  note: >-
+    Two distinct token classes. API tokens authenticate the event-retrieval REST
+    API (apiv2) and MUST NOT be used to send data. Customer tokens authenticate
+    the HTTP/S ingestion endpoint and must NOT be used to query. Basic auth with
+    Loggly account username/password is also historically supported for the
+    retrieval API but bearer API tokens are the current recommendation.
+schemes:
+- name: apiToken
+  type: http
+  scheme: bearer
+  applies_to: Loggly Event Retrieval API (apiv2)
+  location: Authorization header
+  format: 'Authorization: bearer <api-token>'
+  provisioning: >-
+    Created in Loggly Log Settings > API Tokens > Add New. Used for search,
+    events, iterate, fields, and stats endpoints.
+  docs: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/token-based-api-authentication.htm
+- name: customerToken
+  type: apiKey
+  in: path
+  name_hint: token
+  applies_to: Loggly HTTP/S Event Endpoint (ingestion)
+  format: 'https://logs-01.loggly.com/inputs/<customer-token>/tag/<tags>/'
+  provisioning: >-
+    Found under Loggly Source Setup > Customer Tokens; embedded in the ingestion
+    URL path. Sends log data only; rejected by the retrieval API.
+  docs: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/http-endpoint.htm
+- name: basicAuth
+  type: http
+  scheme: basic
+  applies_to: Loggly Event Retrieval API (apiv2) — legacy
+  format: 'account username:password'
+  note: Legacy alternative to bearer API token for retrieval API calls.
+mfa:
+  available: true
+  note: >-
+    Multi-Factor Authentication (2FA) is available for SolarWinds Application
+    Management / Loggly user accounts protecting the console (not API calls).

@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: >-
+  Derived from documented Loggly apiv2 operations (no official MCP server found
+  in the MCP registry, npm @modelcontextprotocol, or Loggly docs as of 2026-07).
+server:
+  name: loggly
+  transport: http
+  url: null
+  note: >-
+    Candidate manifest only. No hosted/remote Loggly MCP server is published.
+    Tools below map one-to-one to real, documented apiv2 endpoints so an
+    implementer can stand up an MCP wrapper over a bearer API token.
+tools:
+- name: search_events
+  description: Initiate a log search over a time range and return an RSID for retrieval.
+  source_operation: GET https://[subdomain].loggly.com/apiv2/search
+  params: [q, from, until, size, order]
+- name: get_events
+  description: Retrieve a page of events for a prior search RSID.
+  source_operation: GET https://[subdomain].loggly.com/apiv2/events
+  params: [rsid, page, format, columns]
+- name: iterate_events
+  description: Cursor-paginate events beyond the 5000-event search cap.
+  source_operation: GET https://[subdomain].loggly.com/apiv2/events/iterate
+  params: [q, from, until, size, next]
+- name: list_fields
+  description: List indexed fields or facet values and counts for a query.
+  source_operation: GET https://[subdomain].loggly.com/apiv2/fields
+  params: [q, from, until, facet_size]
+- name: get_stats
+  description: Compute a statistic (avg/sum/min/max/percentiles/etc.) over a numeric field.
+  source_operation: GET https://[subdomain].loggly.com/apiv2/stats/{stat_type}/{field}
+  params: [q, from, until]
+- name: submit_event
+  description: Send a log event to Loggly via the HTTP/S customer-token endpoint.
+  source_operation: POST https://logs-01.loggly.com/inputs/{customer_token}/tag/{tags}/
+  params: [customer_token, tags, body]

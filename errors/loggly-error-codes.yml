@@ -1,0 +1,58 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-overview.htm
+format: http-status
+envelope: >-
+  Standard HTTP status code + JSON body. Loggly does not use RFC 9457
+  application/problem+json; the description of the failure is returned in the
+  response body.
+errors:
+- status: 200
+  meaning: OK — request succeeded.
+  retryable: false
+- status: 201
+  meaning: Created.
+  retryable: false
+- status: 204
+  meaning: No Content — request succeeded with no body.
+  retryable: false
+- status: 400
+  meaning: Bad Request — malformed query or invalid parameter (e.g. bad search syntax).
+  action: Fix the request/query and resubmit.
+  retryable: false
+- status: 401
+  meaning: Unauthorized — missing or invalid API token.
+  action: Check the Authorization bearer token.
+  retryable: false
+- status: 403
+  meaning: Forbidden — token lacks permission for the resource.
+  retryable: false
+- status: 404
+  meaning: Not Found — resource or endpoint does not exist.
+  retryable: false
+- status: 409
+  meaning: Conflict.
+  retryable: false
+- status: 410
+  meaning: Gone — resource no longer available.
+  retryable: false
+- status: 500
+  meaning: Internal Server Error. When the description contains "timeout", the query timed out.
+  action: Retry allowed for timeout-described 500s.
+  retryable: true
+- status: 501
+  meaning: Not Implemented.
+  retryable: false
+- status: 503
+  meaning: Service Unavailable — API query rate limit exceeded.
+  action: Back off and retry after a delay.
+  retryable: true
+- status: 504
+  meaning: Gateway Timeout — query took too long. Description commonly "timeout".
+  action: Retry with a narrower time range or query.
+  retryable: true
+notes:
+  ingestion: >-
+    The HTTP/S event endpoint returns 200 with a JSON body {"response":"ok"} on
+    accepted events; rejects data sent with an API token (as opposed to a
+    customer token).

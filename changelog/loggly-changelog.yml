@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: https://documentation.solarwinds.com/en/success_center/loggly/content/release_notes/loggly_1_release_notes.htm
+scheme: dated-release-notes
+current_version: apiv2
+docs: https://documentation.solarwinds.com/en/success_center/loggly/content/release_notes/loggly_1_release_notes.htm
+note: >-
+  SolarWinds publishes Loggly release notes as an undated running list of feature
+  announcements rather than semver releases. Highlights of the recent window are
+  captured below without inventing exact dates.
+entries:
+- version: 'feature: Snap Agent 4.3.0'
+  breaking: false
+  highlights:
+  - Snap Agent 4.3.0 collects and forwards multiline logs (stack traces) via the Files and Docker collectors.
+- version: 'feature: MFA / 2FA'
+  breaking: false
+  highlights:
+  - Multi-Factor Authentication added for SolarWinds Application Management / Loggly user accounts.
+- version: 'feature: rKubelog'
+  breaking: false
+  highlights:
+  - rKubelog enables Kubernetes logging without DaemonSets, sidecars, fluentd, or persistent claims (supports nodeless clusters such as EKS on Fargate).
+- version: 'feature: Log Usage dashboard'
+  breaking: false
+  highlights:
+  - New Log Usage dashboard surfaces log-volume consumption and top hosts/services by volume.
+- version: 'feature: Search UX'
+  breaking: false
+  highlights:
+  - '"Search help" renamed "Syntax Help"; smaller histogram; emphasized applied filters; improved action visibility in results.'
+  - Custom parsing rules no longer auto-disabled on timeout; disabled rules can be re-activated.

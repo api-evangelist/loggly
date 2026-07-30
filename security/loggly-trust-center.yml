@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.solarwinds.com/trust-center
+url: https://www.solarwinds.com/trust-center
+certifications: [SOC 2 Type II, ISO 27001, PCI DSS, HIPAA, GDPR]
+evidence:
+- source: https://www.solarwinds.com/trust-center
+  keywords: [trust center, security, compliance, soc 2, iso 27001]
+- source: https://documentation.solarwinds.com/en/success_center/loggly/content/shared/security.htm
+  keywords: [soc 2 type 2, pci, hipaa, iso, eu data protection, tls]
+- source: https://www.loggly.com/product/security/
+  keywords: [security, encryption, compliance]
+notes: >-
+  SolarWinds operates a central Trust Center covering Loggly. Loggly's own
+  Security & Compliance documentation states SOC 2 Type 2 certification, ISO/SOC2
+  certified data centers, and support for PCI, HIPAA, and EU data protection
+  regulated environments.

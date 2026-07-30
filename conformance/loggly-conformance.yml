@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://documentation.solarwinds.com/en/success_center/loggly/content/shared/security.htm
+  + https://www.loggly.com/product/security/ + https://www.solarwinds.com/trust-center
+standards:
+- id: soc2-type2
+  conforms: true
+  evidence: >-
+    Loggly is SOC 2 Type 2 certified; data stored in ISO- and SOC2-certified
+    data centers (Loggly Security & Compliance docs).
+- id: pci-dss
+  conforms: true
+  evidence: Loggly can be used in PCI-regulated environments (security docs).
+- id: hipaa
+  conforms: true
+  evidence: Loggly can be used in HIPAA-regulated environments (security docs).
+- id: gdpr-eu-data-protection
+  conforms: true
+  evidence: Supports EU data protection / GDPR-regulated environments.
+- id: iso-27001
+  conforms: true
+  evidence: Data centers are ISO certified; SolarWinds Trust Center lists ISO 27001.
+- id: tls-in-transit
+  conforms: true
+  evidence: All data transmitted to and retrieved from the service is encrypted with TLS/SSL.
+- id: oauth2
+  conforms: false
+  evidence: API uses bearer API tokens and customer tokens, not OAuth 2.0 flows.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are HTTP status + JSON body, not application/problem+json.
+compliance_program:
+  published: true
+  url: https://www.solarwinds.com/trust-center
+  certifications: [SOC 2 Type II, ISO 27001, PCI DSS, HIPAA, GDPR]

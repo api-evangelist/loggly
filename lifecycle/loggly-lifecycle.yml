@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://documentation.solarwinds.com/en/success_center/loggly/content/release_notes/loggly_1_release_notes.htm
+  + status.loggly.com + api docs
+versioning:
+  scheme: uri-path
+  current: apiv2
+  docs: https://documentation.solarwinds.com/en/success_center/loggly/content/admin/api-overview.htm
+  note: >-
+    The REST retrieval API is versioned in the URI path (apiv2). A prior apiv1
+    existed; apiv2 is the current, documented surface.
+deprecation:
+  policy_url: https://www.solarwinds.com/eol
+  sunset_header: false
+  note: >-
+    No RFC 8594 Sunset/Deprecation header support is documented for the API.
+    SolarWinds publishes product end-of-life notices centrally.
+sla:
+  url: https://www.solarwinds.com/loggly
+  uptime_target: null
+  note: SLA/uptime target not publicly published at a fixed URL.
+status_page: https://status.loggly.com/
+release_notes: https://documentation.solarwinds.com/en/success_center/loggly/content/release_notes/loggly_1_release_notes.htm
+support: https://support.solarwinds.com/loggly
+deprecated_operations: []
