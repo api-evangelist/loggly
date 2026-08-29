@@ -10,6 +10,17 @@ description: >-
   customer-token ingestion API, with SOC 2 Type II, PCI, and HIPAA-aligned security.
   Originally surfaced as a trinity-ventures portfolio lead, this profile has been
   enriched with real, searched API artifacts.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
